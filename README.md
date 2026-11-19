@@ -7,15 +7,36 @@
 
 ## 快速上手
 
-```bash
-git clone https://github.com/Siyaovo/interactive-learning-system.git Learning
-```
+### 需要什么
 
-1. 用 Claude Code（或 Codex）打开 `Learning` 文件夹
-2. 告诉它：「我想学 XX，帮我开始第一课」
-3. 它会自动创建课题子文件夹和第一篇课程
+- **Claude Code**（需要 Claude Pro 或 Max 订阅），或者 **Codex**。两个任选一个。
+- 一个能看 Markdown 的编辑器：推荐 Obsidian，直接用 Claude Code 自带的编辑器、VS Code、Typora 也行。
 
-> 给 AI 的规则写在 `CLAUDE.md`，Claude Code 打开文件夹时会自动读取；Codex 读 `AGENTS.md`，再跳到 `CLAUDE.md`。下面是同一套规则的说明，方便你自己看。
+### 第一次用
+
+1. 把这个仓库下载到本地，文件夹名叫 `Learning`（叫别的也可以）：
+
+   ```bash
+   git clone https://github.com/Siyaovo/interactive-learning-system.git Learning
+   ```
+
+   不熟悉 git 的话，在 GitHub 页面点绿色的 **Code → Download ZIP**，解压后把文件夹改名为 `Learning`。
+
+2. 用 AI 打开这个文件夹：
+   - 终端里：`cd Learning`，然后输入 `claude`（用 Codex 就输入 `codex`）
+   - 用 Claude 桌面应用的话：在 Code 里选择打开 `Learning` 文件夹
+
+3. 对它说：「我想学 XX，帮我开始第一课」。XX 换成你想学的东西，比如「反脆弱」「Agent 评测」「钣金下料」。
+
+4. 它会新建一个课题文件夹，写好第一课，比如 `反脆弱/01-什么是反脆弱.md`。用编辑器打开这一课，读完。
+
+5. 在这一课末尾的「提问环节」里，每道题下面的「你的回答：」后面写你的回答；有别的问题或想法，写在「自由区」。写你真实的理解就行，不用追求标准答案。
+
+6. 保存文件，回到 AI 那边说「学完了」。它会逐条回应你的回答（直接写进这一课的文件末尾），给出掌握度评估，再生成下一课。
+
+7. 重复 4–6。每 3 课会插一次回顾；所有核心概念都掌握后，它会生成毕业笔记和一张 30 天后再做的复盘卡。
+
+> 给 AI 的规则写在 `CLAUDE.md`，Claude Code 打开文件夹时会自动读取；Codex 读 `AGENTS.md`，再跳到 `CLAUDE.md`。所以第 3 步不用解释规则，直接说想学什么就行。下面是同一套规则的说明，方便你自己看。
 
 **就这样，开始学。**
 
