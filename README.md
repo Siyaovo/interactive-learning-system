@@ -9,7 +9,9 @@
 
 ### 需要什么
 
-- **Claude Code**（需要 Claude Pro 或 Max 订阅），或者 **Codex**。两个任选一个。
+- **Claude Code** 或 **Codex**，用哪个都可以：
+  - Claude Code：需要 Claude Pro 或 Max 订阅，安装见 [官方文档](https://docs.claude.com/en/docs/claude-code)
+  - Codex：用 ChatGPT 账号登录；命令行版用 `npm install -g @openai/codex`（或 `brew install codex`）安装，装好后运行一次 `codex login`
 - 一个能看 Markdown 的编辑器：推荐 Obsidian，直接用 Claude Code 自带的编辑器、VS Code、Typora 也行。
 
 ### 第一次用
@@ -23,8 +25,9 @@
    不熟悉 git 的话，在 GitHub 页面点绿色的 **Code → Download ZIP**，解压后把文件夹改名为 `Learning`。
 
 2. 用 AI 打开这个文件夹：
-   - 终端里：`cd Learning`，然后输入 `claude`（用 Codex 就输入 `codex`）
-   - 用 Claude 桌面应用的话：在 Code 里选择打开 `Learning` 文件夹
+   - 用 Claude Code：终端里 `cd Learning`，然后输入 `claude`；用 Claude 桌面应用的话，在 Code 里打开 `Learning` 文件夹
+   - 用 Codex：终端里 `cd Learning`，然后输入 `codex`；用 Codex 的桌面应用或编辑器插件的话，直接打开 `Learning` 文件夹
+   - 第一次在这个文件夹里启动时，它可能问你是否信任这个文件夹，选信任就行
 
 3. 对它说：「我想学 XX，帮我开始第一课」。XX 换成你想学的东西，比如「反脆弱」「Agent 评测」「钣金下料」。
 
@@ -36,7 +39,7 @@
 
 7. 重复 4–6。每 3 课会插一次回顾；所有核心概念都掌握后，它会生成毕业笔记和一张 30 天后再做的复盘卡。
 
-> 给 AI 的规则写在 `CLAUDE.md`，Claude Code 打开文件夹时会自动读取；Codex 读 `AGENTS.md`，再跳到 `CLAUDE.md`。所以第 3 步不用解释规则，直接说想学什么就行。下面是同一套规则的说明，方便你自己看。
+> 给 AI 的规则只有一份，写在 `AGENTS.md`：Codex 打开文件夹时会自动读取它，`CLAUDE.md` 里引用的也是它，所以 Claude Code 同样会自动加载。所以第 3 步不用解释规则，直接说想学什么就行。下面是同一套规则的说明，方便你自己看。
 
 **就这样，开始学。**
 
@@ -55,8 +58,8 @@
 ```
 Learning/                  ← 你的学习文件夹（名字随意）
 ├── README.md              ← 本文件（给人看）
-├── CLAUDE.md              ← 给 AI 的规则（自动读取）
-├── AGENTS.md              ← 给 Codex，指向 CLAUDE.md
+├── AGENTS.md              ← 给 AI 的规则（Codex 自动读取）
+├── CLAUDE.md              ← 给 Claude Code，引用 AGENTS.md
 ├── 反脆弱/                 ← 课题文件夹（自动创建）
 │   ├── 01-什么是反脆弱.md
 │   ├── 02-课题名称.md
@@ -114,15 +117,15 @@ Learning/                  ← 你的学习文件夹（名字随意）
 
 ### AI 回应规则（重要）
 
-**当用户说「学完了」「做完了」或类似表达时，Claude 必须：**
+**当用户说「学完了」「做完了」或类似表达时，AI 必须：**
 
 1. 读取用户在该课的所有回答和自由区内容
 2. 对每个回答给出回应（对在哪、偏在哪、补充什么、可以怎么修正）
 3. 对自由区的问题和感悟也要逐条回应
-4. **把这些回应写入该课文件的底部**，格式为 `## Claude 的回应`，写在自由区之后、下一课预告之前
+4. **把这些回应写入该课文件的底部**，格式为 `## AI 的回应`，写在自由区之后、下一课预告之前
 5. 然后再生成下一课
 
-**这一步不能省略。** 用户的回答和 Claude 的回应必须保存在同一个文件里，形成完整的对话记录，方便日后回顾。
+**这一步不能省略。** 用户的回答和 AI 的回应必须保存在同一个文件里，形成完整的对话记录，方便日后回顾。
 
 ### AI 生成下一篇的规则
 
