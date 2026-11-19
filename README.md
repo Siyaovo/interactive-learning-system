@@ -11,9 +11,11 @@
 git clone https://github.com/Siyaovo/interactive-learning-system.git Learning
 ```
 
-1. 用 Claude Code 打开 `Learning` 文件夹
-2. 告诉 Claude：「我想学 XX，帮我开始第一课」
-3. Claude 会自动创建课题子文件夹和第一篇课程
+1. 用 Claude Code（或 Codex）打开 `Learning` 文件夹
+2. 告诉它：「我想学 XX，帮我开始第一课」
+3. 它会自动创建课题子文件夹和第一篇课程
+
+> 给 AI 的规则写在 `CLAUDE.md`，Claude Code 打开文件夹时会自动读取；Codex 读 `AGENTS.md`，再跳到 `CLAUDE.md`。下面是同一套规则的说明，方便你自己看。
 
 **就这样，开始学。**
 
@@ -31,7 +33,9 @@ git clone https://github.com/Siyaovo/interactive-learning-system.git Learning
 
 ```
 Learning/                  ← 你的学习文件夹（名字随意）
-├── README.md              ← 本文件
+├── README.md              ← 本文件（给人看）
+├── CLAUDE.md              ← 给 AI 的规则（自动读取）
+├── AGENTS.md              ← 给 Codex，指向 CLAUDE.md
 ├── 反脆弱/                 ← 课题文件夹（自动创建）
 │   ├── 01-什么是反脆弱.md
 │   ├── 02-课题名称.md
@@ -169,3 +173,11 @@ Learning/                  ← 你的学习文件夹（名字随意）
 用户在 30 天后打开这个文件，写下回答，告诉 AI「复盘完了」。AI 回应后更新毕业笔记。
 
 **为什么要有 30 天复盘：** 刚毕业时你觉得自己全懂了，但真正的理解需要时间和实践来检验。30 天后回来看，才知道哪些真的内化了，哪些只是当时记住了。
+
+---
+
+## 学习节奏
+
+- **一次只学一个概念。** 每节控制在 20–40 分钟能读完、答完；内容多就拆成两节，不一次堆出一整套文章。
+- **进度要有依据。** 在课题文件夹里记录每个概念到了哪一步：「已阅读 / 已练习 / 已验证掌握」。只读过、或者只是 AI 生成过代码，都不算掌握。
+- **技术类课题讲代码时，面向初学者。** 先说这段代码做什么、输入输出是什么、能不能直接运行；再用普通代码块逐行加注释，讲清每一行的语法和数据怎么流动。
